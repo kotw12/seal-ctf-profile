@@ -33,6 +33,6 @@ A debugger startup failure, wrong libc, architecture mismatch, remote reset and 
 
 A batch GDB command can exit 0 even when its inferior never started. Check the actual stop/frame and stderr before calling a printed global a runtime observation. If `ptrace: Operation not permitted` appears, classify it as a debugger permission boundary once; do not keep retrying GDB, swap to QEMU for a native binary without a separate reason, or treat a static `print` as a live value. Preserve exact QEMU errors (for example, `Exec format error` is not evidence of a socket denial). Report what static analysis established and what remains unobserved; an explicit user-selected execution mode is separate from the challenge-solve instruction.
 
-Report the flag/evidence promptly once the exploit produces it. Do not claim reliability from one accidental crash and do not auto-submit.
+When the exploit or authorized service returns a supported flag, preserve that exact response and report the serialized flag immediately; this is the stop condition. Do not spend the remaining budget on exploit cleanup, reliability tuning, another leak, a second run or NOTES before reporting. If one exact submission was directly authorized, submit once and report acceptance/rejection before optional cleanup; otherwise never claim acceptance or auto-submit.
 
 If separately installed, optional primitive references may be under `~/.agents/skills/ctf-pwn/`. SEAL does not bundle them; read only a relevant file, never run its bundled exploits or installers as setup.

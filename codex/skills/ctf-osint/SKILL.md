@@ -28,6 +28,6 @@ Local tools include `dig` 9.20, `whois` 5.6.6, curl 8.20, ExifTool 13.55 and Ima
 
 A blocked site, no archive capture, ambiguous handle and disproven identity are different outcomes. Change source/query or ask for a hint after documenting what was checked; do not repeatedly search the same phrase. Browser sandbox IPC denial is a permission condition, not evidence absence; request the needed native approval rather than switching backends or changing settings.
 
-Report the answer with at least the decisive source and corroborating evidence. Do not publish, message accounts, submit forms or interact with bots unless the human explicitly asked for that action.
+When decisive public evidence supports the answer or flag, report it immediately with source and corroboration; do not keep searching for redundant sources or write notes first. Do not publish, message accounts, submit forms or interact with bots unless the human explicitly authorized that exact action. A directly authorized exact flag submission precedes optional bookkeeping.
 
 If separately installed, optional technique references may be under `~/.agents/skills/ctf-osint/`. SEAL does not bundle them; read only a relevant file and never treat installation, active scanning or bot-interaction examples as authorization.

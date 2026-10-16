@@ -37,8 +37,10 @@ When starting from the shared contest folder, attachments live at `<problem-slug
 
 Use `seal problem note ["Problem Name"] --message "..."` to append a compact shared update atomically. Include the observed fact or failed assumption, evidence path, and useful next action. It does not rewrite prior notes: do not reread the entire statement and notes merely to perform this append. Read again when resolving new conflicting information or editing existing text. Do not paste long raw output or secrets into NOTES.md.
 
+Workspace bookkeeping never delays a supported flag. Report the exact candidate and decisive evidence first; if an exact submission was directly authorized, submit once and report the observed result next. Append NOTES, clean solvers or write a requested write-up only afterward. If the process may stop, the user-visible flag report is more important than a completed note.
+
 ## Multiple agents
 
-All agents share the same problem files. Before modifying existing text, re-read it and make narrow edits; preserve descriptive solver filenames and avoid replacing another strategy's script. Use the atomic note command for append-only updates. One agent's candidate is not accepted status; record evidence and let the human coordinate strategy. Submission is not automatic, but when the human directly authorizes an exact challenge/candidate, the acting agent may submit through the authorized browser and must record the observed acceptance or rejection.
+All agents share the same problem files. Before modifying existing text, re-read it and make narrow edits; preserve descriptive solver filenames and avoid replacing another strategy's script. Use the atomic note command for append-only updates. One agent's candidate is not accepted status. When a supported candidate appears, follow the shared flag success boundary instead of waiting for another agent or more cleanup. Submission is not automatic, but when the human directly authorizes an exact challenge/candidate, the acting agent prioritizes one submission through the authorized browser and records the observed acceptance or rejection afterward.
 
 `seal problem list --json` lists initialized problem folders. Folder creation is local organization only: it does not download a challenge, start another agent, connect to a service, create an instance or submit a flag.

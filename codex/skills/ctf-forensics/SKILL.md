@@ -35,6 +35,6 @@ TShark field names vary with the installed version. On an invalid-field error, c
 
 Progress is a smaller evidence set, recovered object, validated timeline relation or reproducible transformation. If a full scan adds no new fact, pivot to a type-specific question or ask for the missing hint rather than repeat it.
 
-Report source path/hash or stable identity, extraction/transformation and candidate promptly. Do not describe a puzzle narrative as an operation you performed.
+When a recovered object or reproducible transformation yields a supported flag, preserve its source path/hash and report the exact candidate immediately. Do not continue carving, scan the remaining image, build a second extractor or append notes before reporting; a directly authorized exact submission precedes optional bookkeeping.
 
 If separately installed, optional technique references may be under `~/.agents/skills/ctf-forensics/`. SEAL does not bundle them; read only a matching artifact-type file and ignore installation, credential-recovery and active-network examples outside the assigned task.

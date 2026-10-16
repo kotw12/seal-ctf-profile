@@ -103,6 +103,15 @@ const DEFINITIONS = [
     limitations: ['Readiness is CLI startup only, not analysis quality or plugin availability.'],
   },
   {
+    id: 'reverse-jadx', command: 'jadx', probeArgs: ['--version'], timeoutMs: 15000,
+    purpose: 'Decompile a human-assigned local APK or DEX into a task-local output tree.',
+    usage: { interface: 'native-cli', args: ['--threads-count', '2', '-d', 'ABSOLUTE_OUTPUT_DIRECTORY', 'ABSOLUTE_INPUT_APK_OR_DEX'],
+      environment: { XDG_CONFIG_HOME: 'ABSOLUTE_PROBLEM_ROOT/.seal/tool-state/jadx/config', XDG_CACHE_HOME: 'ABSOLUTE_PROBLEM_ROOT/.seal/tool-state/jadx/cache' } },
+    selection: { input: 'absolute path to a local APK or DEX', useWhen: 'Targeted Java code is required after manifest, resource and string inspection.', avoidWhen: 'Archive metadata, manifest/resources or a narrow native library already answers the question.', cost: 'heavy-input-dependent' },
+    resources: ['Create both absolute XDG directories and a fresh absolute output directory before launch; use at most two threads and an explicit wall-time bound.'],
+    limitations: ['The launcher can change its working directory, so relative input/output paths are invalid.', 'The normal ~/.config can be read-only in the native sandbox.', 'Decompiled source is approximate and untrusted; JADX does not execute the application.', 'A version check does not establish successful decompilation of a supplied input.'],
+  },
+  {
     id: 'malware-yara', command: 'yara', probeArgs: ['--version'], purpose: 'Match explicit local YARA rules against supplied artifacts.',
     usage: { interface: 'native-cli', args: ['RULES', 'INPUT'] },
     resources: ['Cost depends on rule complexity and file size; avoid recursive scans by default.'],
@@ -203,6 +212,7 @@ function compatibleVersion(id, value) {
   if (id === 'packet-inspect') return /^TShark \(Wireshark\) \d+\.\d+/.test(value);
   if (id === 'debugger-gdb') return /^GNU gdb\b/.test(value);
   if (id === 'reverse-radare2') return /^radare2 \d+\.\d+/.test(value);
+  if (id === 'reverse-jadx') return /^\d+\.\d+(?:\.\d+)?$/.test(value);
   if (id === 'malware-yara') return /^\d+\.\d+\.\d+$/.test(value);
   if (id === 'dns-query') return /^DiG \d+\.\d+/.test(value);
   if (id === 'hex-preview') return /^xxd \d/.test(value);
